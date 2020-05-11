@@ -63,8 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharacterMovement.cs" />
-    <Compile Include="Assets\DeathZone.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\CharacterMovement.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\CoinScript.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\DeathZone.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\EnemyScript.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\GameManager.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\HealthSystem.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/My 2D Game/-Title-2D-game-project/Project Major/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
