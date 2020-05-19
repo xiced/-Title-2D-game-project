@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class HealthSystem : MonoBehaviour
 {
     private GameManager code;
 
-    [SerializeField] private int maxHealth;
+    [SerializeField] private int maxHealth = 0;
     [SerializeField] private int currentHealth;
     [SerializeField] private int getDamaged = 1;
 
