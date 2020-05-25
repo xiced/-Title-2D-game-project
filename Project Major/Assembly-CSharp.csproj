@@ -70,6 +70,7 @@
     <Compile Include="Assets\TryoutFolder\TryoutScripts\EnemyScript.cs" />
     <Compile Include="Assets\TryoutFolder\TryoutScripts\GameManager.cs" />
     <Compile Include="Assets\TryoutFolder\TryoutScripts\HealthSystem.cs" />
+    <Compile Include="Assets\TryoutFolder\TryoutScripts\PauseMenuScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/My 2D Game/-Title-2D-game-project/Project Major/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
