@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviour
         score.text = "Score: " + points.ToString("D3");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void AddPoints()
     {
         points += 100;

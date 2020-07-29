@@ -9,7 +9,7 @@ public class DeathZone : MonoBehaviour
     {
         if(collision.gameObject.tag == ("Player"))
         {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
     // Start is called before the first frame update
