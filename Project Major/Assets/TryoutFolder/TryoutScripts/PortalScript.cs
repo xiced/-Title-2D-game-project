@@ -8,7 +8,7 @@ public class PortalScript : MonoBehaviour
     [SerializeField] private Transform boxPosition;
     [SerializeField] private float range;
     private PlayerController pc;
-    public bool enterPortal;
+    public static bool enterPortal;
 
     private void Start()
     {

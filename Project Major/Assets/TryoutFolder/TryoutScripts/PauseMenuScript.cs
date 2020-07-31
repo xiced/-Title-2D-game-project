@@ -11,37 +11,29 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject pauseUI;
 
 
-    [SerializeField] private GameObject ctnbn;
-    [SerializeField] private GameObject extbtn;
-    [SerializeField] private ScaleVictory ctnScript;
-    [SerializeField] private ScaleVictory extScript;
+    [SerializeField] private GameObject continueBtn;
+    [SerializeField] private GameObject exitBtn;
+    [SerializeField] private ScaleVictory victoryScaleTextScript;
+    [SerializeField] private ScaleVictory continueScript;
+    [SerializeField] private ScaleVictory exitScript;
+    [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject victoryText;
 
-    [SerializeField] private GameObject victoryUI;
-    [SerializeField] private GameObject vicText;
-    [SerializeField] private ScaleVictory vstScript;
 
-    [SerializeField] private GameObject deathUI;
-    [SerializeField] private DeadPanelScript dps;
-    [SerializeField] private DeadPanelScript deadctn;
-    [SerializeField] private DeadPanelScript deadext;
+    [SerializeField] private GameObject defeatedUI;
+    [SerializeField] private DeadPanelScript defeatPanelScript;
+    [SerializeField] private DeadPanelScript defeatContinue;
+    [SerializeField] private DeadPanelScript defeatExit;
+
 
     [SerializeField] private AudioSource cameraAudio;
-    private PlayerController pc;
-    private PlayerAttack pa;
-    [SerializeField] private PortalScript ps;
-    [SerializeField] private EnemyController ec;
-    private PlayerHealth ph;
-    [SerializeField] private EnemyRangeController erc;
 
+    private PlayerController pc;
+    private int count;
 
     void Start()
     {
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        pa = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
-        ph = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        ps = GameObject.FindGameObjectWithTag("Portal").GetComponent<PortalScript>();
-        ec = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnemyController>();
-        erc = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnemyRangeController>();
     }
 
     // Update is called once per frame
@@ -55,85 +47,69 @@ public class PauseMenuScript : MonoBehaviour
                 Pause();
         }
 
-        if (ps.enterPortal == true)
+        if (PortalScript.enterPortal == true)
         {
-            victoryUI.SetActive(true);
-            vicText.SetActive(true);
-            vstScript.ScaleVictoryText();
-            ctnScript.ScaleVictoryText();
-            extScript.ScaleVictoryText();
-            ec.enabled = false;
-            ph.enabled = false;
-            erc.enabled = false;
+            victoryPanel.SetActive(true);
+            victoryText.SetActive(true);
+            victoryScaleTextScript.ScaleVictoryText();
+            continueScript.ScaleVictoryText();
+            exitScript.ScaleVictoryText();
         }
         else
-            victoryUI.SetActive(false);
+            victoryPanel.SetActive(false);
 
         if(pc.playerDead == true)
         {
-            deathUI.SetActive(true);
-            dps.ScaleDeadText();
-            deadctn.ScaleDeadText();
-            deadext.ScaleDeadText();
+            defeatedUI.SetActive(true);
+            defeatPanelScript.ScaleDeadText();
+            defeatContinue.ScaleDeadText();
+            defeatExit.ScaleDeadText();
         }
 
     }
 
-    void Resart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Resume();
-        //Time.timeScale = 1f;
-        pc.enabled = true;
-        pa.enabled = true;
-        ec.enabled = true;
-        erc.enabled = true;
+        Time.timeScale = 1f;
         cameraAudio.volume = 0.3f;
         Debug.Log("Restart");
-
     }
 
-    void LoadMenu()
+    public void LoadMenu()
     {
         Time.timeScale = 1f;
         Debug.Log("To Menu");
-        pc.enabled = true;
-        pa.enabled = true;
         SceneManager.LoadScene("MainMenu");
     }
 
-    void Resume()
+    public void Resume()
     {
-        //disable canvas
         pauseUI.SetActive(false);
-
-        //re-enable movement
+        Time.timeScale = 1f;
         PausedGame = false;
-        pc.enabled = true;
-        pa.enabled = true;
-        ec.enabled = true;
-        erc.enabled = true;
         cameraAudio.volume = 0.3f;
     }
 
-    void Pause()
+    public void Pause()
     {
-        //enabled canvas
         pauseUI.SetActive(true);
-
-        //disable movement
+        Time.timeScale = 0f;
         PausedGame = true;
-        pc.enabled = false;
-        pa.enabled = false;
-        ec.enabled = false;
-        erc.enabled = false;
         cameraAudio.volume = 0.15f;
     }
 
-    void Continue()
+    public void Continue()
     {
-        SceneManager.LoadScene("MainMenu");
+        if(count == 4)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        count++;
         Debug.Log("Continued");
+        Time.timeScale = 1f;
     }
 
 

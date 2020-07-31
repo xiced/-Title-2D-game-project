@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 8986142056100513030}
   - component: {fileID: 8986142056100513037}
   - component: {fileID: 8986142056100513036}
-  - component: {fileID: 8986142056100513039}
   m_Layer: 11
   m_Name: AxeGolem
   m_TagString: MyEnemy
@@ -137,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3d8036d3a941d7f479c9907b0266ca16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -183,7 +182,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8986142056100513031}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -194,8 +193,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!95 &8986142056100513030
 Animator:
   serializedVersion: 3
@@ -229,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   stopDistance: 4
-  player: {fileID: 0}
+  player: {fileID: 720269281977163926, guid: faa97d113819ef64797050e45e04ec53, type: 3}
   viewRange: 10
   distanceFromPlayer: 0
   rayLen: 3
@@ -237,6 +236,7 @@ MonoBehaviour:
   wallDetect: {fileID: 8986142054493953922}
   wallRayLen: 1
   isAlive: 0
+  rb: {fileID: 0}
   isAttack: 0
   startAttackTime: 1
   cirPos: {fileID: 8986142055198551222}
@@ -257,21 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300dc976da70a8b47993f127b1304ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 30
   getDamaged: 1
---- !u!114 &8986142056100513039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8986142056100513031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75b978148b7e51f44ad65d2cd911ea8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  isNear: 0
   knockbackX: 6
   knockbackY: 5
-  player: {fileID: 720269281977163926, guid: faa97d113819ef64797050e45e04ec53, type: 3}
-  isNear: 0

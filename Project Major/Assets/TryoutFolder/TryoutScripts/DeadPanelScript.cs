@@ -23,7 +23,7 @@ public class DeadPanelScript : MonoBehaviour
     {
         if(ph.currentHealth <= 0)
         {
-            LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime);
+            LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime).setIgnoreTimeScale(true);
         }
     }
 }

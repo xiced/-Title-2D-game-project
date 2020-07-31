@@ -16,12 +16,12 @@ public class ScaleTween : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        LeanTween.scale(gameObject, new Vector3(initposX, initposY, initposZ), inittime);
+        LeanTween.scale(gameObject, new Vector3(initposX, initposY, initposZ), inittime).setIgnoreTimeScale(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime);
+        LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime).setIgnoreTimeScale(true); 
     }
 
 }

@@ -122,6 +122,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 720269281977163924}
+  playerDead: 0
+  isHurt: 0
+  knockbackX: 10
+  knockbackY: 10
+  negKnocbackX: -10
   speed: 5
   jumpForce: 25
   ground: {fileID: 720269283052580254}
@@ -188,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81575957e3d8e174689b504968e3be11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 5
   currentHealth: 0
   getDamaged: 1
 --- !u!114 &720269281977164140
@@ -204,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cirPos: {fileID: 720269283311231630}
-  range: 1.67
+  range: 1.68
   theEnemy:
     serializedVersion: 2
     m_Bits: 2048

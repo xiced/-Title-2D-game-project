@@ -28,12 +28,12 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= getDamaged;
         if (currentHealth <= 0 && gameObject.tag == "Player")
         {
-            pc.PlayerDeath();
+            //pc.PlayerDeath();
         }
         if(currentHealth >= 0 && gameObject.tag == "Player")
         {
-            pc.PlayerHurt();
-            pc.GetKnockback();
+            //pc.PlayerHurt();
+            //pc.GetKnockback();
         }
     }
 

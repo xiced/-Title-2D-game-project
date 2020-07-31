@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScaleVictory : MonoBehaviour
 {
-    [SerializeField] private PortalScript ps;
     [SerializeField] private float initposX;
     [SerializeField] private float initposY;
     [SerializeField] private float initposZ;
@@ -16,13 +15,12 @@ public class ScaleVictory : MonoBehaviour
 
     private void Start()
     {
-        ps = GameObject.FindGameObjectWithTag("Portal").GetComponent<PortalScript>();
     }
     public void ScaleVictoryText()
     {
-        if (ps.enterPortal == true)
+        if (PortalScript.enterPortal == true)
         {
-            LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime);
+            LeanTween.scale(gameObject, new Vector3(exitPosX, exitPosY, exitPosZ), exitTime).setIgnoreTimeScale(true);
         }
     }
 

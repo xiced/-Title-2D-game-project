@@ -10,13 +10,12 @@ public class CoinScript : MonoBehaviour
     void Start()
     {
         code = GameObject.Find("gameManager").GetComponent<GameManager>();;
-        Physics2D.IgnoreLayerCollision(9, 11);
+        //Physics2D.IgnoreLayerCollision(9, 11);
     }
 
-    //destroy coin when player touch
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(collision.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player")
         {
             code.AddPoints();
             Destroy(gameObject);

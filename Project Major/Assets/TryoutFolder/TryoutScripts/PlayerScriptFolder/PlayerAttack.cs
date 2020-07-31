@@ -15,7 +15,9 @@ public class PlayerAttack : MonoBehaviour
     private EnemyController ec;
     private EnemyRangeController erc;
     private EnenyGetAttacked ega;
-
+    private SwordPowerUp spu;
+    [SerializeField]private PlayerController pc;
+    private DinoBossScript dino;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
         swing = GetComponent<AudioSource>();
         erc = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnemyRangeController>();
         ega = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnenyGetAttacked>();
+        spu = GameObject.FindGameObjectWithTag("PowerUpTag").GetComponent<SwordPowerUp>();
+        dino = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<DinoBossScript>();
     }
 
     // Update is called once per frame
@@ -32,12 +36,21 @@ public class PlayerAttack : MonoBehaviour
     {
         timeToPlaySfx -= Time.deltaTime;
         //Attacking
-        if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping"))
+        if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && !SwordPowerUp.powerUp)
         {
             PlaySwingSfx();
             anim.SetTrigger("IsAttacking");
             AttackHitBox();
         }
+        else if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && SwordPowerUp.powerUp)
+        {
+            anim.SetFloat("AttackSpeed", 3f);
+            PlaySwingSfx();
+            anim.SetTrigger("IsAttacking");
+            AttackHitBox();
+        }
+        else if(SwordPowerUp.powerUp)
+            anim.SetFloat("AttackSpeed", 1f);
     }
 
     private void PlaySwingSfx()
@@ -62,12 +75,7 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < aoe.Length; i++)
         {
             aoe[i].GetComponent<EnemyHealth>().GetDamaged(damageValue);
-            
-            if(aoe[i].GetComponent<EnemyHealth>().health >= 0)
-            {
-                ega.GotHurt();
-                ega.GetKnockback();
-            }
+            aoe[i].GetComponent<DinoBossScript>().GetDamaged(damageValue);
         }
     }
 }

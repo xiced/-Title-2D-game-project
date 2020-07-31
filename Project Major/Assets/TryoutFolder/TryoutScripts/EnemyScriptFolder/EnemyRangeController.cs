@@ -128,12 +128,12 @@ public class EnemyRangeController : MonoBehaviour
             //if the player is on the right side of the enemy
             if (transform.position.x > player.position.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), speed * Time.deltaTime);
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
             else
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), speed * Time.deltaTime);
                 transform.eulerAngles = new Vector3(0, -180, 0);
             }
         }
