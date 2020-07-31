@@ -2449,7 +2449,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 852480625}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865870389}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81575957e3d8e174689b504968e3be11, type: 3}
@@ -2467,7 +2467,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 852480625}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865870389}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fef691053d1ad043b87650338202de3, type: 3}
@@ -3033,9 +3033,9 @@ GameObject:
   - component: {fileID: 676950461}
   - component: {fileID: 676950460}
   - component: {fileID: 676950465}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DinoBoss
-  m_TagString: Untagged
+  m_TagString: MyEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3164,8 +3164,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676950459}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 18.8, y: 117.1, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalPosition: {x: 18.8, y: 113.61, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 40
@@ -4643,12 +4643,12 @@ PrefabInstance:
     - target: {fileID: 720269281977163926, guid: faa97d113819ef64797050e45e04ec53,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 720269281977163926, guid: faa97d113819ef64797050e45e04ec53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 106.8
+      value: 40.56
       objectReference: {fileID: 0}
     - target: {fileID: 720269281977163926, guid: faa97d113819ef64797050e45e04ec53,
         type: 3}
@@ -6007,12 +6007,12 @@ PrefabInstance:
     - target: {fileID: 4912911249535994581, guid: 09d0508972d56564eb0f6226611550f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7999997
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 4912911249535994581, guid: 09d0508972d56564eb0f6226611550f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 106.1624
+      value: 39.9224
       objectReference: {fileID: 0}
     - target: {fileID: 4912911249535994581, guid: 09d0508972d56564eb0f6226611550f9,
         type: 3}
@@ -6434,12 +6434,12 @@ PrefabInstance:
     - target: {fileID: 51620539885219408, guid: 57296d76c8c3406438db94127eed5a11,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7999997
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 51620539885219408, guid: 57296d76c8c3406438db94127eed5a11,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 106.1624
+      value: 39.9224
       objectReference: {fileID: 0}
     - target: {fileID: 51620539885219408, guid: 57296d76c8c3406438db94127eed5a11,
         type: 3}
@@ -6595,7 +6595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1328047407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6729,12 +6729,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b077056e807e1784b8ae7c83bc0b768f, type: 3}
---- !u!4 &1392787225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 720269283052580254, guid: faa97d113819ef64797050e45e04ec53,
-    type: 3}
-  m_PrefabInstance: {fileID: 852480625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402429046
 GameObject:
   m_ObjectHideFlags: 0
@@ -16789,43 +16783,6 @@ Transform:
   m_Father: {fileID: 18595534}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1865870389 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 720269281977163931, guid: faa97d113819ef64797050e45e04ec53,
-    type: 3}
-  m_PrefabInstance: {fileID: 852480625}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1865870390 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 720269281977163924, guid: faa97d113819ef64797050e45e04ec53,
-    type: 3}
-  m_PrefabInstance: {fileID: 852480625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1865870395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865870389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fef691053d1ad043b87650338202de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1865870390}
-  playerDead: 0
-  isHurt: 0
-  knockbackX: 6
-  knockbackY: 5
-  negKnocbackX: 6
-  speed: 5
-  jumpForce: 10
-  ground: {fileID: 1392787225}
-  radius: 0.67
-  thatGround:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1001 &1893112140
 PrefabInstance:
   m_ObjectHideFlags: 0

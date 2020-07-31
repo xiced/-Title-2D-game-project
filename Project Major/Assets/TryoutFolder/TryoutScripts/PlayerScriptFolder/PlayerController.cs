@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //For animation
-    [SerializeField] private Animator anim;
+    private Animator anim;
     private SpriteRenderer spr;
     private BoxCollider2D boxc;
     private PlayerController pc;
@@ -55,13 +55,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
-        //Walking
+        /*//Walking
         if (Input.GetButton("Horizontal") && !Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("IsWalking", true);
         }
         else
-            anim.SetBool("IsWalking", false);
+            anim.SetBool("IsWalking", false);*/
 
         PlayerJump();
 
@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         //detects floor
         isGrounded = Physics2D.OverlapCircle(ground.position, radius, thatGround);
 

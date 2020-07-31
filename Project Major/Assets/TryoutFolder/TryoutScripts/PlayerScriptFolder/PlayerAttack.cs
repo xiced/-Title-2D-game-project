@@ -16,8 +16,8 @@ public class PlayerAttack : MonoBehaviour
     private EnemyRangeController erc;
     private EnenyGetAttacked ega;
     private SwordPowerUp spu;
-    [SerializeField]private PlayerController pc;
-    private DinoBossScript dino;
+    //[SerializeField]private PlayerController pc;
+    //private DinoBossScript dino;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         erc = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnemyRangeController>();
         ega = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<EnenyGetAttacked>();
         spu = GameObject.FindGameObjectWithTag("PowerUpTag").GetComponent<SwordPowerUp>();
-        dino = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<DinoBossScript>();
+        //dino = GameObject.FindGameObjectWithTag("MyEnemy").GetComponent<DinoBossScript>();
     }
 
     // Update is called once per frame
@@ -36,20 +36,20 @@ public class PlayerAttack : MonoBehaviour
     {
         timeToPlaySfx -= Time.deltaTime;
         //Attacking
-        if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && !SwordPowerUp.powerUp)
+        if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && SwordPowerUp.powerUp == false)
         {
             PlaySwingSfx();
             anim.SetTrigger("IsAttacking");
             AttackHitBox();
         }
-        else if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && SwordPowerUp.powerUp)
+        else if (Input.GetButtonDown("Attack") && !this.anim.GetCurrentAnimatorStateInfo(0).IsTag("IsJumping") && SwordPowerUp.powerUp == true)
         {
             anim.SetFloat("AttackSpeed", 3f);
             PlaySwingSfx();
             anim.SetTrigger("IsAttacking");
             AttackHitBox();
         }
-        else if(SwordPowerUp.powerUp)
+        else if(SwordPowerUp.powerUp == false)
             anim.SetFloat("AttackSpeed", 1f);
     }
 
@@ -75,7 +75,7 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < aoe.Length; i++)
         {
             aoe[i].GetComponent<EnemyHealth>().GetDamaged(damageValue);
-            aoe[i].GetComponent<DinoBossScript>().GetDamaged(damageValue);
+            //aoe[i].GetComponent<DinoBossScript>().GetDamaged(damageValue);
         }
     }
 }
